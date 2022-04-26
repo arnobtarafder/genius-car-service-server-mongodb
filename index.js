@@ -109,7 +109,7 @@ async function run() {
 run().catch(console.dir)
 
 
-app.get("tarafder", (req, res) => {
+app.get("/tarafder", (req, res) => {
     res.send("The man wants to be your friend")
 })
 
