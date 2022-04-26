@@ -109,6 +109,10 @@ async function run() {
 run().catch(console.dir)
 
 
+app.get("tarafder", (req, res) => {
+    res.send("The man wants to be your friend")
+})
+
 
 app.get("/", (req, res) => {
     res.send("Running Genius Car Services Server");
