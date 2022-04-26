@@ -59,8 +59,6 @@ async function run() {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const service = await serviceCollection.findOne(query);
-            // console.log(query);
-            // console.log(ObjectId);
             res.send(service);
         })
 
@@ -79,8 +77,8 @@ async function run() {
             res.send(result);
         })
 
-        // Order Collection API
 
+        // Order Collection API
         app.get('/order', verifyJWT, async (req, res) => {
             const decodedEmail = req.decoded.email;
             const email = req.query.email;
@@ -90,8 +88,8 @@ async function run() {
                 const orders = await cursor.toArray();
                 res.send(orders);
             }
-            else{
-                res.status(403).send({message: 'forbidden access'})
+            else {
+                res.status(403).send({ message: 'forbidden access' })
             }
         })
 
@@ -109,10 +107,10 @@ async function run() {
 run().catch(console.dir)
 
 
+
 app.get("/tarafder", (req, res) => {
     res.send("The man wants to be your friend")
 })
-
 
 app.get("/", (req, res) => {
     res.send("Running Genius Car Services Server");
